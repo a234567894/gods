@@ -6,21 +6,22 @@ package hashbidimap
 
 import (
 	"encoding/json"
+
 	"github.com/emirpasic/gods/containers"
 )
 
 // Assert Serialization implementation
-var _ containers.JSONSerializer = (*Map)(nil)
-var _ containers.JSONDeserializer = (*Map)(nil)
+var _ containers.JSONSerializer = (*Map[int, int])(nil)
+var _ containers.JSONDeserializer = (*Map[int, int])(nil)
 
 // ToJSON outputs the JSON representation of the map.
-func (m *Map) ToJSON() ([]byte, error) {
+func (m *Map[TKey, TValue]) ToJSON() ([]byte, error) {
 	return m.forwardMap.ToJSON()
 }
 
 // FromJSON populates the map from the input JSON representation.
-func (m *Map) FromJSON(data []byte) error {
-	elements := make(map[string]interface{})
+func (m *Map[TKey, TValue]) FromJSON(data []byte) error {
+	elements := make(map[TKey]TValue)
 	err := json.Unmarshal(data, &elements)
 	if err == nil {
 		m.Clear()
@@ -32,11 +33,11 @@ func (m *Map) FromJSON(data []byte) error {
 }
 
 // UnmarshalJSON @implements json.Unmarshaler
-func (m *Map) UnmarshalJSON(bytes []byte) error {
+func (m *Map[TKey, TValue]) UnmarshalJSON(bytes []byte) error {
 	return m.FromJSON(bytes)
 }
 
 // MarshalJSON @implements json.Marshaler
-func (m *Map) MarshalJSON() ([]byte, error) {
+func (m *Map[TKey, TValue]) MarshalJSON() ([]byte, error) {
 	return m.ToJSON()
 }
