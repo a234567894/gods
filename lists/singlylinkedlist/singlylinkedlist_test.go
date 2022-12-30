@@ -527,7 +527,7 @@ func TestListSerialization(t *testing.T) {
 		t.Errorf("Got error %v", err)
 	}
 
-	err = json.Unmarshal([]byte(`[1,2,3]`), &list)
+	err = json.Unmarshal([]byte(`["a", "b", "c"]`), &list)
 	if err != nil {
 		t.Errorf("Got error %v", err)
 	}
@@ -536,7 +536,7 @@ func TestListSerialization(t *testing.T) {
 func TestListString(t *testing.T) {
 	c := New[int]()
 	c.Add(1)
-	if !strings.HasPrefix(c.String(), "DoublyLinkedList") {
+	if !strings.HasPrefix(c.String(), "SinglyLinkedList") {
 		t.Errorf("String should start with container name")
 	}
 }

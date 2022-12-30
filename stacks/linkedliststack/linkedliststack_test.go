@@ -233,7 +233,7 @@ func TestStackSerialization(t *testing.T) {
 		t.Errorf("Got error %v", err)
 	}
 
-	err = json.Unmarshal([]byte(`[1,2,3]`), &stack)
+	err = json.Unmarshal([]byte(`["1","2","3"]`), &stack)
 	if err != nil {
 		t.Errorf("Got error %v", err)
 	}

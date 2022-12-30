@@ -43,7 +43,7 @@ func TestMapPut(t *testing.T) {
 		{5, "e", true},
 		{6, "f", true},
 		{7, "g", true},
-		{8, nil, false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests1 {
@@ -88,10 +88,10 @@ func TestMapRemove(t *testing.T) {
 		{2, "b", true},
 		{3, "c", true},
 		{4, "d", true},
-		{5, nil, false},
-		{6, nil, false},
-		{7, nil, false},
-		{8, nil, false},
+		{5, *new(string), false},
+		{6, *new(string), false},
+		{7, *new(string), false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests2 {
@@ -108,10 +108,10 @@ func TestMapRemove(t *testing.T) {
 	m.Remove(2)
 	m.Remove(2)
 
-	if actualValue, expectedValue := fmt.Sprintf("%s", m.Keys()), "[]"; actualValue != expectedValue {
+	if actualValue, expectedValue := fmt.Sprintf("%v", m.Keys()), "[]"; actualValue != expectedValue {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
-	if actualValue, expectedValue := fmt.Sprintf("%s", m.Values()), "[]"; actualValue != expectedValue {
+	if actualValue, expectedValue := fmt.Sprintf("%v", m.Values()), "[]"; actualValue != expectedValue {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
 	if actualValue := m.Size(); actualValue != 0 {
@@ -142,7 +142,7 @@ func TestMapGetKey(t *testing.T) {
 		{5, "e", true},
 		{6, "f", true},
 		{7, "g", true},
-		{nil, "x", false},
+		{*new(int), "x", false},
 	}
 
 	for _, test := range tests1 {
@@ -607,7 +607,7 @@ func TestMapSerialization(t *testing.T) {
 		assertSerialization(deserialized, "C", t)
 	}
 
-	m := NewWith[string, float32](utils.StringComparator, utils.Float64Comparator)
+	m := NewWith[string, float64](utils.StringComparator, utils.Float64Comparator)
 	m.Put("a", 1.0)
 	m.Put("b", 2.0)
 	m.Put("c", 3.0)

@@ -403,7 +403,7 @@ func TestBinaryHeapSerialization(t *testing.T) {
 		t.Errorf("Got error %v", err)
 	}
 
-	err = json.Unmarshal([]byte(`[1,2,3]`), &heap)
+	err = json.Unmarshal([]byte(`["1","2","3"]`), &heap)
 	if err != nil {
 		t.Errorf("Got error %v", err)
 	}

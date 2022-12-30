@@ -490,9 +490,9 @@ func TestSetString(t *testing.T) {
 func TestSetIntersection(t *testing.T) {
 	{
 		set := NewWithStringComparator[string]()
-		another := NewWithIntComparator[string]()
+		another := NewWithStringComparator[string]()
 		set.Add("a", "b", "c", "d")
-		another.Add("1", "2", "3", "4")
+		another.Add("a", "b", "c", "d")
 		difference := set.Difference(another)
 		if actualValue, expectedValue := difference.Size(), 0; actualValue != expectedValue {
 			t.Errorf("Got %v expected %v", actualValue, expectedValue)
@@ -523,9 +523,9 @@ func TestSetIntersection(t *testing.T) {
 func TestSetUnion(t *testing.T) {
 	{
 		set := NewWithStringComparator[string]()
-		another := NewWithIntComparator[string]()
+		another := NewWithStringComparator[string]()
 		set.Add("a", "b", "c", "d")
-		another.Add("1", "2", "3", "4")
+		another.Add("a", "b", "c", "d")
 		difference := set.Difference(another)
 		if actualValue, expectedValue := difference.Size(), 0; actualValue != expectedValue {
 			t.Errorf("Got %v expected %v", actualValue, expectedValue)
@@ -556,9 +556,9 @@ func TestSetUnion(t *testing.T) {
 func TestSetDifference(t *testing.T) {
 	{
 		set := NewWithStringComparator[string]()
-		another := NewWithIntComparator[string]()
+		another := NewWithStringComparator[string]()
 		set.Add("a", "b", "c", "d")
-		another.Add("1", "2", "3", "4")
+		another.Add("a", "b", "c", "d")
 		difference := set.Difference(another)
 		if actualValue, expectedValue := difference.Size(), 0; actualValue != expectedValue {
 			t.Errorf("Got %v expected %v", actualValue, expectedValue)

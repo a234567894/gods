@@ -25,10 +25,10 @@ func TestMapPut(t *testing.T) {
 	if actualValue := m.Size(); actualValue != 7 {
 		t.Errorf("Got %v expected %v", actualValue, 7)
 	}
-	if actualValue, expectedValue := m.Keys(), []int{1, 2, 3, 4, 5, 6, 7}; !sameElements(actualValue, expectedValue) {
+	if actualValue, expectedValue := m.Keys(), []int{5, 6, 7, 3, 4, 1, 2}; !sameElements(actualValue, expectedValue) {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
-	if actualValue, expectedValue := m.Values(), []string{"a", "b", "c", "d", "e", "f", "g"}; !sameElements(actualValue, expectedValue) {
+	if actualValue, expectedValue := m.Values(), []string{"e", "f", "g", "c", "d", "a", "b"}; !sameElements(actualValue, expectedValue) {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
 
@@ -41,7 +41,7 @@ func TestMapPut(t *testing.T) {
 		{5, "e", true},
 		{6, "f", true},
 		{7, "g", true},
-		{8, nil, false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests1 {
@@ -70,11 +70,11 @@ func TestMapRemove(t *testing.T) {
 	m.Remove(8)
 	m.Remove(5)
 
-	if actualValue, expectedValue := m.Keys(), []int{1, 2, 3, 4}; !sameElements(actualValue, expectedValue) {
+	if actualValue, expectedValue := m.Keys(), []int{3, 4, 1, 2}; !sameElements(actualValue, expectedValue) {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
 
-	if actualValue, expectedValue := m.Values(), []string{"a", "b", "c", "d"}; !sameElements(actualValue, expectedValue) {
+	if actualValue, expectedValue := m.Values(), []string{"c", "d", "a", "b"}; !sameElements(actualValue, expectedValue) {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
 	if actualValue := m.Size(); actualValue != 4 {
@@ -86,10 +86,10 @@ func TestMapRemove(t *testing.T) {
 		{2, "b", true},
 		{3, "c", true},
 		{4, "d", true},
-		{5, nil, false},
-		{6, nil, false},
-		{7, nil, false},
-		{8, nil, false},
+		{5, *new(string), false},
+		{6, *new(string), false},
+		{7, *new(string), false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests2 {
@@ -106,10 +106,10 @@ func TestMapRemove(t *testing.T) {
 	m.Remove(2)
 	m.Remove(2)
 
-	if actualValue, expectedValue := fmt.Sprintf("%s", m.Keys()), "[]"; actualValue != expectedValue {
+	if actualValue, expectedValue := fmt.Sprintf("%v", m.Keys()), "[]"; actualValue != expectedValue {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
-	if actualValue, expectedValue := fmt.Sprintf("%s", m.Values()), "[]"; actualValue != expectedValue {
+	if actualValue, expectedValue := fmt.Sprintf("%v", m.Values()), "[]"; actualValue != expectedValue {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
 	if actualValue := m.Size(); actualValue != 0 {

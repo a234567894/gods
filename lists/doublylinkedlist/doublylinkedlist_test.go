@@ -659,7 +659,7 @@ func TestListSerialization(t *testing.T) {
 		t.Errorf("Got error %v", err)
 	}
 
-	err = json.Unmarshal([]byte(`[1,2,3]`), &list)
+	err = json.Unmarshal([]byte(`["a", "b", "c"]`), &list)
 	if err != nil {
 		t.Errorf("Got error %v", err)
 	}

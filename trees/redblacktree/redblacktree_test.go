@@ -88,7 +88,7 @@ func TestRedBlackTreePut(t *testing.T) {
 		{5, "e", true},
 		{6, "f", true},
 		{7, "g", true},
-		{8, nil, false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests1 {
@@ -135,10 +135,10 @@ func TestRedBlackTreeRemove(t *testing.T) {
 		{2, "b", true},
 		{3, "c", true},
 		{4, "d", true},
-		{5, nil, false},
-		{6, nil, false},
-		{7, nil, false},
-		{8, nil, false},
+		{5, *new(string), false},
+		{6, *new(string), false},
+		{7, *new(string), false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests2 {
@@ -155,10 +155,10 @@ func TestRedBlackTreeRemove(t *testing.T) {
 	tree.Remove(2)
 	tree.Remove(2)
 
-	if actualValue, expectedValue := fmt.Sprintf("%s", tree.Keys()), "[]"; actualValue != expectedValue {
+	if actualValue, expectedValue := fmt.Sprintf("%v", tree.Keys()), "[]"; actualValue != expectedValue {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
-	if actualValue, expectedValue := fmt.Sprintf("%s", tree.Values()), "[]"; actualValue != expectedValue {
+	if actualValue, expectedValue := fmt.Sprintf("%v", tree.Values()), "[]"; actualValue != expectedValue {
 		t.Errorf("Got %v expected %v", actualValue, expectedValue)
 	}
 	if empty, size := tree.Empty(), tree.Size(); empty != true || size != -0 {
@@ -692,7 +692,7 @@ func TestRedBlackTreeSerialization(t *testing.T) {
 		t.Errorf("Got error %v", err)
 	}
 
-	err = json.Unmarshal([]byte(`{"a":1,"b":2}`), &tree)
+	err = json.Unmarshal([]byte(`{"a":"1","b":"2"}`), &tree)
 	if err != nil {
 		t.Errorf("Got error %v", err)
 	}

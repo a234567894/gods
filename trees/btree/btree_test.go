@@ -22,7 +22,7 @@ func TestBTreeGet1(t *testing.T) {
 	tree.Put(7, "g")
 
 	tests := [][]interface{}{
-		{0, nil, false},
+		{0, *new(string), false},
 		{1, "a", true},
 		{2, "b", true},
 		{3, "c", true},
@@ -30,7 +30,7 @@ func TestBTreeGet1(t *testing.T) {
 		{5, "e", true},
 		{6, "f", true},
 		{7, "g", true},
-		{8, nil, false},
+		{8, *new(string), false},
 	}
 
 	for _, test := range tests {
@@ -54,7 +54,7 @@ func TestBTreeGet2(t *testing.T) {
 	tree.Put(1, "a")
 
 	tests := [][]interface{}{
-		{0, nil, false},
+		{0, *new(string), false},
 		{1, "a", true},
 		{2, "b", true},
 		{3, "c", true},
@@ -65,7 +65,7 @@ func TestBTreeGet2(t *testing.T) {
 		{8, "h", true},
 		{9, "i", true},
 		{10, "j", true},
-		{11, nil, false},
+		{11, *new(string), false},
 	}
 
 	for _, test := range tests {
@@ -1207,7 +1207,7 @@ func TestBTreeSerialization(t *testing.T) {
 		t.Errorf("Got error %v", err)
 	}
 
-	err = json.Unmarshal([]byte(`{"a":1,"b":2}`), &tree)
+	err = json.Unmarshal([]byte(`{"a":"1","b":"2"}`), &tree)
 	if err != nil {
 		t.Errorf("Got error %v", err)
 	}
