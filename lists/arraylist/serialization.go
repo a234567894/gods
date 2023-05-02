@@ -7,7 +7,7 @@ package arraylist
 import (
 	"encoding/json"
 
-	"github.com/emirpasic/gods/containers"
+	"github.com/a234567894/gods/containers"
 )
 
 // Assert Serialization implementation

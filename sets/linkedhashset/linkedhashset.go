@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/emirpasic/gods/lists/doublylinkedlist"
-	"github.com/emirpasic/gods/sets"
+	"github.com/a234567894/gods/lists/doublylinkedlist"
+	"github.com/a234567894/gods/sets"
 )
 
 // Assert Set implementation

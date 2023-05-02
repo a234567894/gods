@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/emirpasic/gods/sets/treeset"
+	"github.com/a234567894/gods/sets/treeset"
 )
 
 // IteratorWithIndexExample to demonstrate basic usage of IteratorWithIndex

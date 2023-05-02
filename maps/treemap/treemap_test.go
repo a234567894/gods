@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/utils"
 )
 
 func TestMapPut(t *testing.T) {
@@ -722,7 +722,7 @@ func TestMapString(t *testing.T) {
 	}
 }
 
-//noinspection GoBoolExpressions
+// noinspection GoBoolExpressions
 func assertSerialization(m *Map[string, string], txt string, t *testing.T) {
 	if actualValue := m.Keys(); false ||
 		actualValue[0] != "a" ||

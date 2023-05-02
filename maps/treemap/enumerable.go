@@ -5,8 +5,8 @@
 package treemap
 
 import (
-	"github.com/emirpasic/gods/containers"
-	rbt "github.com/emirpasic/gods/trees/redblacktree"
+	"github.com/a234567894/gods/containers"
+	rbt "github.com/a234567894/gods/trees/redblacktree"
 )
 
 // Assert Enumerable implementation

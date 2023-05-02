@@ -15,9 +15,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/emirpasic/gods/lists/arraylist"
-	"github.com/emirpasic/gods/trees"
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/lists/arraylist"
+	"github.com/a234567894/gods/trees"
+	"github.com/a234567894/gods/utils"
 )
 
 // Assert Tree implementation

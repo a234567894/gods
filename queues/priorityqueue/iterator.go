@@ -5,8 +5,8 @@
 package priorityqueue
 
 import (
-	"github.com/emirpasic/gods/containers"
-	"github.com/emirpasic/gods/trees/binaryheap"
+	"github.com/a234567894/gods/containers"
+	"github.com/a234567894/gods/trees/binaryheap"
 )
 
 // Assert Iterator implementation

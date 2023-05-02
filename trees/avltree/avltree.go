@@ -12,8 +12,8 @@ package avltree
 import (
 	"fmt"
 
-	"github.com/emirpasic/gods/trees"
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/trees"
+	"github.com/a234567894/gods/utils"
 )
 
 // Assert Tree implementation

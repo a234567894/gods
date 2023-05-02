@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/utils"
 )
 
 func TestRedBlackTreeGet(t *testing.T) {

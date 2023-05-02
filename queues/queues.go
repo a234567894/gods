@@ -10,7 +10,7 @@
 // Reference: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 package queues
 
-import "github.com/emirpasic/gods/containers"
+import "github.com/a234567894/gods/containers"
 
 // Queue interface that all queues implement
 type Queue[T comparable] interface {

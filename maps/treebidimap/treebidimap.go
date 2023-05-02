@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/emirpasic/gods/maps"
-	"github.com/emirpasic/gods/trees/redblacktree"
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/maps"
+	"github.com/a234567894/gods/trees/redblacktree"
+	"github.com/a234567894/gods/utils"
 )
 
 // Assert Map implementation

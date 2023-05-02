@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/emirpasic/gods/maps/treemap"
+	"github.com/a234567894/gods/maps/treemap"
 )
 
 // IteratorWithKeyExample to demonstrate basic usage of IteratorWithKey

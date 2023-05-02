@@ -7,8 +7,8 @@ package avltree
 import (
 	"encoding/json"
 
-	"github.com/emirpasic/gods/containers"
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/containers"
+	"github.com/a234567894/gods/utils"
 )
 
 // Assert Serialization implementation

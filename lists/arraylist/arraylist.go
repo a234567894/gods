@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/emirpasic/gods/lists"
-	"github.com/emirpasic/gods/utils"
+	"github.com/a234567894/gods/lists"
+	"github.com/a234567894/gods/utils"
 )
 
 // Assert List implementation
@@ -102,7 +102,7 @@ func (list *List[T]) Values() []T {
 	return newElements
 }
 
-//IndexOf returns index of provided element
+// IndexOf returns index of provided element
 func (list *List[T]) IndexOf(value T) int {
 	if list.size == 0 {
 		return -1
